@@ -1,18 +1,18 @@
 //Dependency Inversion
 public class Interruptor {
-    private Dispositivo dispositivo;
+    final private Dispositivo DISPOSITIVO;
     private boolean estado = false;
 
     public Interruptor(Dispositivo dispositivo) {
-        this.dispositivo = dispositivo;
+        this.DISPOSITIVO = dispositivo;
     }
 
     public void presionar() {
         if (!estado) {
-            dispositivo.prender();
+            DISPOSITIVO.prender();
             estado = true;
         } else {
-            dispositivo.apagar();
+            DISPOSITIVO.apagar();
             estado = false;
         }
 
